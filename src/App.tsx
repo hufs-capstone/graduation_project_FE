@@ -1,16 +1,15 @@
 import React from 'react';
 import './App.css';
-import { Button, Container, Row, Col } from 'reactstrap';
-import{BrowserRouter as Router,Route,Switch} from 'react-router-dom';
-import AgeContainers from './containers/AgeContainer';
+import { Container, Row, Col } from 'reactstrap';
+import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import AppNavBar from './components/navbar';
 import AgeSexContainer from './containers/AgeSexContainer';
 import Home from './routes/Home';
+import ManualCalculator from './routes/ManualCalculator';
 
 function App() {
   return (
     <div className="App">
-      <AgeContainers/>
        <Container>
         <Row>
           <Col>
@@ -30,8 +29,8 @@ function App() {
               
               <Route exact path = "/" component={Home}/>
               
+              <Route path = "/manualcalculator" component={ManualCalculator}/>
               {/*
-              <Route path = "/cal1" component={cal1}/>
               <Route path = "/cal2" component={cal2}/>
               <Route path = "/comp" component={comp}/>
               */}

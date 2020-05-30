@@ -37,7 +37,7 @@ import {
                   <NavLink href="/cal1">맞춤 계산기</NavLink>
                   </DropdownItem>
                   <DropdownItem>
-                  <NavLink href="/cal2">제품 선택 계산기</NavLink>
+                  <NavLink href="/manualcalculator">제품 선택 계산기</NavLink>
                   </DropdownItem>
                   <DropdownItem divider />
                   <DropdownItem>
