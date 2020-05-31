@@ -3,19 +3,19 @@ const SETAGE = 'agesex/SETAGE' as const;
 const SETSEX = 'agesex/SETSEX' as const;
 
 export const setage = (age:number) => ({type:SETAGE, payload: age});
-export const setsex = (sex:number) => ({type:SETSEX, payload: sex});
+export const setsex = (sex:string) => ({type:SETSEX, payload: sex});
 
 type AgeSexAction = ReturnType<typeof setage>|
 ReturnType<typeof setsex>;
 
 type AgeSexState = {
     age: number
-    sex: number
+    sex: string
 }
 
 const initialState: AgeSexState = {
     age: 0,
-    sex: 0
+    sex: 'female'
 };
 
 function agesex(state: AgeSexState = initialState, action: AgeSexAction){

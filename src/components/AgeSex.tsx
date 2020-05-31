@@ -6,9 +6,9 @@ import { Form } from 'reactstrap';
 
 type AgeSexProps = {
     age: number;
-    sex: number;
+    sex: string;
     setAge: (age:number) =>void;
-    setSex: (sex:number) =>void;
+    setSex: (sex:string) =>void;
 }
 
 function AgeSex({
@@ -21,7 +21,7 @@ function AgeSex({
         setAge(Number(e.target.value));
     }
     const onChangeSex = (e:React.ChangeEvent<HTMLInputElement>) =>{
-        setSex(Number(e.target.value));
+        setSex((e.target.value));
     }
     return (
         <div>
@@ -53,8 +53,8 @@ function AgeSex({
                 <FormGroup>
                     <Input type="select" name ="selectSex" id="Sex" onChange={onChangeSex}>
                         <option value={-1}>성별 선택</option>
-                        <option value={0}>여성</option>
-                        <option value={1}>남성</option>
+                        <option value={'female'}>여성</option>
+                        <option value={'male'}>남성</option>
                     </Input>
                 </FormGroup>
                 </Col>
