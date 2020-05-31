@@ -12,7 +12,7 @@ function AgeSexContainer(){
     const setAge = (age: number) => {
         dispatch(setage(age));
     };
-    const setSex = (sex: number) => {
+    const setSex = (sex: string) => {
         dispatch(setsex(sex));
     };
     return (
