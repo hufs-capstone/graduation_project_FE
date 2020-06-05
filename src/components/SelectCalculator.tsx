@@ -1,7 +1,6 @@
 import React,{useState} from 'react';
 import { Table } from 'reactstrap';
-import { render } from 'react-dom';
-import { Button, Input, Col } from 'reactstrap';
+import { Button  } from 'reactstrap';
 import {ProductState} from '../modules/types'
 import {post, get} from '../fetch';
 
