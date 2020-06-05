@@ -6,6 +6,7 @@ import AppNavBar from './components/navbar';
 import AgeSexContainer from './containers/AgeSexContainer';
 import Home from './routes/Home';
 import ManualCalculator from './routes/ManualCalculator';
+import SelectCalculator from './routes/SelectCalculator';
 
 function App() {
   return (
@@ -30,8 +31,9 @@ function App() {
               <Route exact path = "/" component={Home}/>
               
               <Route path = "/manualcalculator" component={ManualCalculator}/>
+              
+              <Route path = "/selectcalculator" component={SelectCalculator}/>
               {/*
-              <Route path = "/cal2" component={cal2}/>
               <Route path = "/comp" component={comp}/>
               */}
 
