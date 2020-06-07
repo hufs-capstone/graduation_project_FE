@@ -5,12 +5,16 @@ import { FormGroup,  Input, Label } from 'reactstrap';
 import { Form } from 'reactstrap';
 import ProductRow from './ProductRow';
 import {post, get} from '../fetch';
+import {ProductState} from '../modules/types';
 
+type ProductTableProps = {
+    setProduct: (product: ProductState) => void;
+}
 function ProductTable(
     { 
-
+        setProduct
     }
-    : any) {
+    : ProductTableProps) {
         var [searchState, set_searchState] = useState("");
         var [startItemState, set_pageState] = useState(1);
         var [productsState, set_productState] = useState([{name:"제품명", company:"회사명"}]
