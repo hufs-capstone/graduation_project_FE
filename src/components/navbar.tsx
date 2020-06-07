@@ -41,7 +41,7 @@ import {
                   </DropdownItem>
                   <DropdownItem divider />
                   <DropdownItem>
-                  <NavLink href="/comp">제품 비교</NavLink>
+                  <NavLink href="/compareview">제품 비교</NavLink>
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>

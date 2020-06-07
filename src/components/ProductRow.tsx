@@ -1,25 +1,21 @@
 import React,{useState} from 'react';
-import { Table } from 'reactstrap';
-import { Row, Col,  Button } from 'reactstrap';
-import { FormGroup,  Input, Label } from 'reactstrap';
-import { Form } from 'reactstrap';
+import {ProductState} from '../modules/types';
 
 type ProductRowProps = {
-    name: string;
-    company_name: string;
-
+    product: ProductState;
+    setProduct: (product:ProductState)=>void;
 }
 
 function ProductRow(
     {
-        name,
-        company_name
+        product,
+        setProduct
     }: ProductRowProps){
 
         return (
-            <tr>
-                <th>{name}</th>
-                <th>{company_name}</th>
+            <tr onClick={()=>{console.log(product);setProduct(product)}}>
+                <th>{product.name}</th>
+                <th>{product.company}</th>
             </tr>
         )
 }

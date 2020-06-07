@@ -5,16 +5,19 @@ import { FormGroup,  Input, Label } from 'reactstrap';
 import { Form } from 'reactstrap';
 import ProductRow from './ProductRow';
 import {post, get} from '../fetch';
+import {ProductState} from '../modules/types';
 
+type ProductTableProps = {
+    setProduct: (product: ProductState) => void;
+}
 function ProductTable(
     { 
-
+        setProduct
     }
-    : any) {
+    : ProductTableProps) {
         var [searchState, set_searchState] = useState("");
         var [startItemState, set_pageState] = useState(1);
-        var [productsState, set_productState] = useState([{name:"제품명", company:"회사명"}]
-        );
+        var [productsState, set_productState] = useState([]);
 
         const onClickSearch = ( )=> {
             console.log(searchState);
@@ -31,7 +34,7 @@ function ProductTable(
         };
     return(
         <div>
-            <Table>
+            <Table hover >
                 <thead>
                     <tr>
                         <th>제품 이름</th>
@@ -40,9 +43,8 @@ function ProductTable(
                 </thead>
                 <tbody>
                     { 
-
-                        productsState.map((c:any)=>{
-                            return <ProductRow name={c.name} company_name={c.company}/>
+                        productsState.map((c:ProductState)=>{
+                            return <ProductRow product={c} setProduct={setProduct}/>
                         })
                     }
 
@@ -54,7 +56,6 @@ function ProductTable(
                 </FormGroup>
                 <Button onClick={onClickSearch}>Search</Button>
             </Form>
-            <Button onClick={()=>{console.log(productsState)}}> check</Button>
         </div>
     );
 }
