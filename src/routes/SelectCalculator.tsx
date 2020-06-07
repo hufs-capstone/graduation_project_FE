@@ -1,12 +1,12 @@
 import React from 'react';
 import SelectCalculatorContainer from '../containers/SelectCalculatorContainer';
-import ProductTable from '../components/ProductTable';
+import ProductTableContiner1 from '../containers/ProductTableContainer1';
 
 function SelectCalculator({}){
     return (
         <div>
             <SelectCalculatorContainer/>
-            <ProductTable/>
+            <ProductTableContiner1/>
         </div>
     )
 }
