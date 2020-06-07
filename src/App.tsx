@@ -7,6 +7,7 @@ import AgeSexContainer from './containers/AgeSexContainer';
 import Home from './routes/Home';
 import ManualCalculator from './routes/ManualCalculator';
 import SelectCalculator from './routes/SelectCalculator';
+import CompareView from './routes/CompareView';
 
 function App() {
   return (
@@ -33,9 +34,8 @@ function App() {
               <Route path = "/manualcalculator" component={ManualCalculator}/>
               
               <Route path = "/selectcalculator" component={SelectCalculator}/>
-              {/*
-              <Route path = "/comp" component={comp}/>
-              */}
+              <Route path = "/compareview" component={CompareView}/>
+              }
 
             </Switch>
           </div>
