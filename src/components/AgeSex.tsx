@@ -58,9 +58,6 @@ function AgeSex({
                     </Input>
                 </FormGroup>
                 </Col>
-                <Col>
-                    <Button outline color="primary">입력</Button>
-                </Col>
             </Row>
         </Form>
         </div>
