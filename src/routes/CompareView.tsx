@@ -21,7 +21,6 @@ function CompareView({}){
                         <ProductTableContiner2/>
                     </Col>
                 </Row>
-
             </Container>
         </div>
     )

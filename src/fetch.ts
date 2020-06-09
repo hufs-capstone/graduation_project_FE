@@ -1,11 +1,11 @@
 const headers: HeadersInit = {
   'Accept': 'application/json',
   'Content-Type': 'application/json;charset=UTF-8',
-  'Access-Control-Allow-Origin' : 'http://localhost:3000',
+  'Access-Control-Allow-Origin' : 'http://localhost:3001',
   'Access-Control-Request-Method' : 'POST'
 }
 export async function post<T>(taskParam: any, api:string): Promise<T> {
-  const url = 'http://localhost:5000/'+api
+  const url = 'http://192.168.0.51:5000/'+api
   const opts: RequestInit = {
     method: 'POST',
     mode: 'cors',
@@ -21,7 +21,7 @@ export async function post<T>(taskParam: any, api:string): Promise<T> {
   })
 }
 export async function get<T>(api:string): Promise<T> {
-  const url = 'http://localhost:5000/'+api;
+  const url = 'http://192.168.0.51:5000/'+api;
   const opts: RequestInit = {
     method: 'GET',
     mode: 'cors',
