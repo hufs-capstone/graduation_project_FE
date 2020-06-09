@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import { Table } from 'reactstrap';
-import { Button  } from 'reactstrap';
+import { render } from 'react-dom';
+import { Button, Input, Col } from 'reactstrap';
 import {ProductState} from '../modules/types'
 import {post, get} from '../fetch';
 
@@ -37,13 +38,32 @@ function SelectCalculator(
         const handleClick=(e :any)=>{
             console.log(age);
             console.log(sex);
-        }
+            console.log(product);
+            var params = {
+                'sex' : String(sex),
+                'age' : String(age),
+                'product_name' : String(product.name),
+            };
+            const res = post(params, 'translate')
+            res.then((data:any)=> {
+                const trans = data.translated.product;
+                set_state({...state, 
+                    kcal2: trans.kcal,
+                    carbs2: trans.carbs,
+                    protein2 : trans.protein,
+                    fat2: trans.fat,
+                    na2: trans.na,
+                    chol2: trans.chol,
+                    sugar2: trans.sugar
+            });
+        })
+    }
     return(
         <Table responsive>
             <thead>
               <tr>
                 <th></th>
-                <th>제품명 : {state.name}</th>
+                <th>제품명 : {product.name}</th>
                 <th>변환 전</th>
                 <th>변환 후</th>
               </tr>
@@ -52,43 +72,43 @@ function SelectCalculator(
               <tr>
                 <th scope="row"></th>
                 <td>칼로리</td>
-                <td>{state.kcal}</td>
+                <td>{product.kcal.toFixed(2)}</td>
                 <td>{state.kcal2}  </td>
               </tr>
               <tr>
                 <th scope="row"></th>
                 <td>탄수화물</td>
-                <td>{state.carbs}</td>
+                <td>{product.carbs.toFixed(2)}</td>
                 <td>{state.carbs2}  </td>
               </tr>
               <tr>
                 <th scope="row"></th>
                 <td>단백질</td>
-                <td>{state.protein}</td>
+                <td>{product.protein.toFixed(2)}</td>
                 <td>{state.protein2} </td>
               </tr>
               <tr>
                 <th scope="row"></th>
                 <td>지방</td>
-                <td>{state.fat}</td>
+                <td>{product.fat.toFixed(2)}</td>
                 <td>{state.fat2}</td>
               </tr>
               <tr>
                 <th scope="row"></th>
                 <td>나트륨</td>
-                <td>{state.na}</td>
+                <td>{product.na.toFixed(2)}</td>
                 <td>{state.na2}</td>
               </tr>
               <tr>
                 <th scope="row"></th>
                 <td>콜레스테롤</td>
-                <td>{state.chol}</td>
+                <td>{product.chol.toFixed(2)}</td>
                 <td>{state.chol2}</td>
               </tr>
               <tr>
                 <th scope="row"></th>
                 <td>당류</td>
-                <td>{state.sugar}</td>
+                <td>{product.sugar.toFixed(2)}</td>
                 <td>{state.sugar2}</td>
               </tr>
               <tr>
@@ -99,7 +119,6 @@ function SelectCalculator(
               </tr>
             </tbody>
         </Table>
-    )
-    }
-
+    );
+}
 export default SelectCalculator;

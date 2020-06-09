@@ -6,6 +6,7 @@ import { Form } from 'reactstrap';
 import ProductRow from './ProductRow';
 import {post, get} from '../fetch';
 import {ProductState} from '../modules/types';
+import { Alert } from 'reactstrap';
 
 type ProductTableProps = {
     setProduct: (product: ProductState) => void;
@@ -56,6 +57,7 @@ function ProductTable(
                 </FormGroup>
                 <Button onClick={onClickSearch}>Search</Button>
             </Form>
+            <Alert color="white"/>
         </div>
     );
 }
