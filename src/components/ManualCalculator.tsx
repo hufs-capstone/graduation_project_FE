@@ -1,7 +1,9 @@
 import React,{useState} from 'react';
 import { Table } from 'reactstrap';
-import { Button} from 'reactstrap';
+import { Button, Input} from 'reactstrap';
 import {post, get} from '../fetch';
+import Demo from './Chart';
+import Barchart from './BarChart';
 type ManualCalculatorProps = {
     age: number;
     sex: string;
@@ -64,10 +66,11 @@ function ManualCalculator (
         }
 
     return(
+        <div>
         <Table responsive>
             <thead>
               <tr>
-                <th></th>
+                <th ></th>
                 <th>제품명 : </th>
                 <th>변환 전</th>
                 <th>변환 후</th>
@@ -77,7 +80,7 @@ function ManualCalculator (
               <tr>
                 <th scope="row"></th>
                 <td>칼로리</td>
-                <td><input type="number" placeholder="칼로리 입력" name="kcal" onChange={handleChange}/></td>
+                <td><Input type="number" placeholder="칼로리 입력" name="kcal" onChange={handleChange} bsSize="sm" /></td>
                 <td>{state.kcal2}  </td>
               </tr>
               <tr>
@@ -124,6 +127,8 @@ function ManualCalculator (
               </tr>
             </tbody>
         </Table>
+        <Barchart data={state}></Barchart>
+        </div>
     );
 
 }
