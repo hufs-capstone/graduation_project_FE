@@ -25,8 +25,6 @@ function AgeSex({
     }
     return (
         <div>
-            <h1>age: {age}</h1>
-            <h1>sex: {sex}</h1>
         <Form>
             <Row form>
                 <Col>
