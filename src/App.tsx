@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, Alert } from 'reactstrap';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import AppNavBar from './components/navbar';
 import AgeSexContainer from './containers/AgeSexContainer';
@@ -19,6 +19,7 @@ function App() {
           </Col>
         </Row>
       </Container>
+      <Alert color="light"></Alert>
       <Container>
         <div>
           <AgeSexContainer />

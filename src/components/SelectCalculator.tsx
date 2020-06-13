@@ -4,6 +4,7 @@ import { render } from 'react-dom';
 import { Button, Input, Col } from 'reactstrap';
 import {ProductState} from '../modules/types'
 import {post, get} from '../fetch';
+import Barchart from './BarChart';
 
 type SelectCalculatorState = {
     product: ProductState;
@@ -59,6 +60,7 @@ function SelectCalculator(
         })
     }
     return(
+        <div>
         <Table responsive>
             <thead>
               <tr>
@@ -119,6 +121,8 @@ function SelectCalculator(
               </tr>
             </tbody>
         </Table>
+        <Barchart data={state}></Barchart>
+        </div>
     );
 }
 export default SelectCalculator;
